@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="src/EchoNET.API/EchoNET.API.csproj" />
+  <Project Path="src/EchoNET.Application/EchoNET.Application.csproj" />
+  <Project Path="src/EchoNET.Domain/EchoNET.Domain.csproj" />
+  <Project Path="src/EchoNET.Infrastructure/EchoNET.Infrastructure.csproj" />
+</Solution>
