@@ -79,6 +79,15 @@ namespace EchoNET.API
 
             var app = builder.Build();
 
+            // === АВТО-МИГРАЦИИ ===
+            // Применяем миграции EF Core при старте приложения.
+            using (var scope = app.Services.CreateScope())
+            {
+                var db = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+                db.Database.Migrate();
+            }
+            // === КОНЕЦ БЛОКА МИГРАЦИЙ ===
+
             // HTTP request pipeline
             if (app.Environment.IsDevelopment())
             {
